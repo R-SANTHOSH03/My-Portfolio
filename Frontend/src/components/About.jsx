@@ -429,7 +429,7 @@ const About = () => {
 
                   {/* Animated skill tags */}
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mt: 4 }}>
-                    {['AWS','HTML5', 'CSS3', 'JavaScript', 'React', 'Material-UI',  'Java', 'MongoDB', 'SQL', 'REST APIs', 'GitHub', 'Git',"UI/UX Designing "].map((skill, index) => (
+                    {['AWS','Next.js','Nest.js','Supabase','HTML5', 'CSS3', 'JavaScript', 'React', 'Material-UI','TypeScript','Tailwind CSS','Java', 'MongoDB', 'SQL', 'REST APIs', 'GitHub', 'Git',"UI/UX Designing "].map((skill, index) => (
                       <motion.span
                         key={skill}
                         initial={{ opacity: 0, scale: 0 }}

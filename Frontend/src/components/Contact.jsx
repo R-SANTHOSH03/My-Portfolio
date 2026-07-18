@@ -217,9 +217,9 @@ const AnimatedBorderBox = styled(Box)(({ theme }) => ({
 }));
 
 // ---------- Fill these in with your real details ----------
-const MY_EMAIL = 'santhosh@example.com';
-const MY_PHONE = '+91 00000 00000';
-const MY_LOCATION = 'Dindigul';
+const MY_EMAIL = 'santhoshrpsanthosh@gmail.com';
+const MY_PHONE = '+91 9597633016';
+const MY_LOCATION = 'Dindigul, Tamil Nadu, India';
 const MY_LINKEDIN = 'https://www.linkedin.com/in/santhosh-r-santhosh/';
 const MY_GITHUB = 'https://github.com/R-SANTHOSH03';
 
@@ -440,7 +440,7 @@ const Contact = () => {
                             </InputAdornment>
                           ),
                         }}
-                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, backgroundColor: alpha(theme.palette.background.paper, 0.7) } }}
+                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 1, backgroundColor: alpha(theme.palette.background.paper, 0.7), '&.Mui-focused .MuiOutlinedInput-notchedOutline': { border: 'none' } }, '& .MuiInputLabel-shrink': { backgroundColor: theme.palette.background.default, px: 1, borderRadius: 1 } }}
                       />
                       <AnimatedBorderBox sx={{ opacity: focusedField === 'name' ? 1 : 0 }} />
                     </MessageContainer>
@@ -470,7 +470,7 @@ const Contact = () => {
                             </InputAdornment>
                           ),
                         }}
-                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, backgroundColor: alpha(theme.palette.background.paper, 0.7) } }}
+                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 1, backgroundColor: alpha(theme.palette.background.paper, 0.7), '&.Mui-focused .MuiOutlinedInput-notchedOutline': { border: 'none' } }, '& .MuiInputLabel-shrink': { backgroundColor: theme.palette.background.default, px: 1, borderRadius: 1 } }}
                       />
                       <AnimatedBorderBox sx={{ opacity: focusedField === 'email' ? 1 : 0 }} />
                     </MessageContainer>
@@ -496,7 +496,7 @@ const Contact = () => {
                             </InputAdornment>
                           ),
                         }}
-                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, backgroundColor: alpha(theme.palette.background.paper, 0.7) } }}
+                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 1, backgroundColor: alpha(theme.palette.background.paper, 0.7), '&.Mui-focused .MuiOutlinedInput-notchedOutline': { border: 'none' } }, '& .MuiInputLabel-shrink': { backgroundColor: theme.palette.background.default, px: 1, borderRadius: 1 } }}
                       />
                       <AnimatedBorderBox sx={{ opacity: focusedField === 'subject' ? 1 : 0 }} />
                     </MessageContainer>
@@ -519,7 +519,7 @@ const Contact = () => {
                         onMouseEnter={() => setHoveredField('message')}
                         onMouseLeave={() => setHoveredField(null)}
                         inputProps={{ maxLength: 500 }}
-                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, backgroundColor: alpha(theme.palette.background.paper, 0.7) } }}
+                        sx={{ '& .MuiOutlinedInput-root': { borderRadius: 1, backgroundColor: alpha(theme.palette.background.paper, 0.7), '&.Mui-focused .MuiOutlinedInput-notchedOutline': { border: 'none' } }, '& .MuiInputLabel-shrink': { backgroundColor: theme.palette.background.default, px: 1, borderRadius: 1 } }}
                       />
                       <CharacterCounter nearLimit={messageLength > 400}>{messageLength}/500</CharacterCounter>
                       <AnimatedBorderBox sx={{ opacity: focusedField === 'message' ? 1 : 0 }} />

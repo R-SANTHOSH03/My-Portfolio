@@ -39,7 +39,7 @@ const Experience = () => {
       },
       { threshold: 0.2 }
     )
-    
+
     observer.observe(document.getElementById('experience'))
     return () => observer.disconnect()
   }, [])
@@ -51,15 +51,54 @@ const Experience = () => {
   const experiences = [
     {
       company: "Highonswift",
+      position: "Junior Full Stack Developer",
+      period: "Nov 2025 - Present",
+      description:
+        "Working on multiple real-time client projects, contributing to end-to-end application development across frontend and backend. Building scalable, responsive web applications using modern JavaScript frameworks, integrating third-party services, optimizing user experience, and collaborating with cross-functional teams throughout the software development lifecycle.",
+
+      responsibilities: [
+        "Developed and maintained multiple real-time client projects using Next.js, NestJS, React, and modern web technologies.",
+        "Built responsive, mobile-first user interfaces using Tailwind CSS and Material UI with a strong focus on UI/UX best practices.",
+        "Designed and implemented RESTful APIs using NestJS and integrated frontend applications with backend services.",
+        "Designed and managed PostgreSQL databases using Supabase, including authentication, database schemas, and CRUD operations.",
+        "Integrated secure payment gateways and email notification systems for user authentication, order processing, and transactional emails.",
+        "Collaborated with designers, developers, and stakeholders to deliver high-quality features within project deadlines.",
+        "Optimized application performance, accessibility, SEO, and cross-browser compatibility for production deployments.",
+        "Performed unit testing, manual testing, debugging, and bug fixing to ensure application reliability and maintainability.",
+        "Participated in code reviews, version control using Git/GitHub, and Agile development practices."
+      ],
+
+      technologies: [
+        "Next.js",
+        "React",
+        "NestJS",
+        "TypeScript",
+        "Tailwind CSS",
+        "Material UI",
+        "Supabase",
+        "PostgreSQL",
+        "Prisma",
+        "REST API",
+        "Git",
+        "GitHub",
+        "Render",
+        "Email Integration",
+        "Payment Gateway",
+        "Unit Testing",
+        "Manual Testing"
+      ]
+    },
+    {
+      company: "Highonswift",
       position: "Full Stack Developer intern",
-      period: "June-2025 - Present",
+      period: "June-2025 - October-2025",
       description: "Contributed to the development of web applications using React and Node.js",
       responsibilities: [
-         "Designed and implemented responsive frontend interfaces using React and Material-UI",
+        "Designed and implemented responsive frontend interfaces using React and Material-UI",
         "Developed RESTful APIs with Node.js and Express for seamless data management",
         "Created database schemas and implemented CRUD operations with MongoDB",
       ],
-      technologies: ["React", "Node.js", "MongoDB","Material-UI", "render" ]
+      technologies: ["React", "Node.js", "MongoDB", "Material-UI", "render"]
     },
     {
       company: " Neznova",
@@ -67,17 +106,17 @@ const Experience = () => {
       period: "May-2025 -June-2025",
       description: "Developed AI solutions and machine learning models for various projects with focus on practical applications",
       responsibilities: [
-      " Built AI tools that solve real problems",
+        " Built AI tools that solve real problems",
 
-"Made machine learning models work better",
+        "Made machine learning models work better",
 
-"Created reusable code for data processing",
+        "Created reusable code for data processing",
 
-"Worked with different data sources and APIs"
+        "Worked with different data sources and APIs"
       ],
-technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
+      technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
     },
-   
+
   ]
 
   return (
@@ -86,15 +125,15 @@ technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
         <Typography variant="h2" gutterBottom align="center" sx={{ fontWeight: 'bold', mb: 6, fontSize: { xs: '2.5rem', md: '3.75rem' } }}>
           Work <span style={{ color: '#00bcd4' }}>Experience</span>
         </Typography>
-        
+
         <Box>
           {experiences.map((exp, index) => (
-            <Accordion 
-              key={index} 
+            <Accordion
+              key={index}
               expanded={expanded === index}
               onChange={handleChange(index)}
-              sx={{ 
-                mb: 3, 
+              sx={{
+                mb: 3,
                 bgcolor: 'background.paper',
                 borderRadius: '12px !important',
                 overflow: 'hidden',
@@ -111,7 +150,7 @@ technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
             >
               <AccordionSummary
                 expandIcon={<ExpandMore color="primary" sx={{ fontSize: '2rem' }} />}
-                sx={{ 
+                sx={{
                   borderLeft: '5px solid',
                   borderColor: 'primary.main',
                   padding: '20px',
@@ -160,16 +199,16 @@ technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
                 <Typography variant="body1" paragraph sx={{ color: 'text.primary', lineHeight: 1.7 }}>
                   {exp.description}
                 </Typography>
-                
+
                 <Typography variant="h6" gutterBottom sx={{ color: 'primary.main', fontWeight: '600', mt: 3 }}>
                   Key Responsibilities:
                 </Typography>
                 <Box component="ul" sx={{ pl: 2, mb: 3 }}>
                   {exp.responsibilities.map((resp, i) => (
-                    <Box 
-                      component="li" 
+                    <Box
+                      component="li"
                       key={i}
-                      sx={{ 
+                      sx={{
                         animation: expanded === index ? `${slideIn} 0.5s ease-out ${i * 0.1}s both` : 'none'
                       }}
                     >
@@ -179,19 +218,19 @@ technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
                     </Box>
                   ))}
                 </Box>
-                
+
                 <Box sx={{ mt: 3 }}>
                   <Typography variant="h6" gutterBottom sx={{ color: 'primary.main', fontWeight: '600' }}>
                     Technologies Used:
                   </Typography>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                     {exp.technologies.map((tech, i) => (
-                      <Chip 
-                        key={i} 
-                        label={tech} 
-                        size="small" 
-                        variant="outlined" 
-                        sx={{ 
+                      <Chip
+                        key={i}
+                        label={tech}
+                        size="small"
+                        variant="outlined"
+                        sx={{
                           borderColor: 'primary.main',
                           color: 'white',
                           bgcolor: 'rgba(0, 188, 212, 0.08)',
@@ -202,7 +241,7 @@ technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "NumPy"]
                             color: 'white',
                             animation: `${glow} 1.5s ease-in-out infinite`
                           }
-                        }} 
+                        }}
                       />
                     ))}
                   </Box>
