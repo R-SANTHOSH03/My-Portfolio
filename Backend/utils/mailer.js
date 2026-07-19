@@ -19,6 +19,13 @@ const transporter = nodemailer.createTransport({
     pass: process.env.MAIL_APP_PASSWORD,
   },
 });
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("SMTP Verify Error:", error);
+  } else {
+    console.log("SMTP Server is ready");
+  }
+});
 
 export const sendOwnerNotification = async ({ name, email, subject, message }) => {
   return transporter.sendMail({
@@ -130,9 +137,6 @@ export const sendUserConfirmation = async ({ name, email }) => {
                   <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                       <td align="center">
-                        <div style="width:56px; height:56px; background-color:rgba(255,255,255,0.15); border-radius:50%; line-height:56px; font-size:26px; margin:0 auto 16px auto;">
-                          ✅
-                        </div>
                         <p style="margin:0; font-size:20px; font-weight:600; color:#ffffff;">Message Received!</p>
                       </td>
                     </tr>
