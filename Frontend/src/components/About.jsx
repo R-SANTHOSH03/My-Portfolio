@@ -142,7 +142,7 @@ const About = () => {
 
   return (
     <section id="about" className={`section ${visible ? 'visible' : ''}`}>
-      <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
         {/* Title with animation */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -156,7 +156,7 @@ const About = () => {
             align="center"
             sx={{ 
               fontWeight: 'bold', 
-              mb: 8,
+              mb: { xs: 4, md: 8 },
               fontSize: { xs: '2.5rem', md: '3.75rem' },
               background: 'linear-gradient(45deg, #00bcd4, #00e5ff)',
               backgroundClip: 'text',
@@ -170,7 +170,7 @@ const About = () => {
         </motion.div>
 
         {/* Split container - Left side logo, Right side content */}
-        <Grid container spacing={6} alignItems="center" sx={{ mb: 8 }}>
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" sx={{ mb: { xs: 5, md: 8 } }}>
           {/* Left side - Square/Rectangle Logo with enhanced animation */}
           <Grid size={{ xs: 12, md: 5 }}> 
             <motion.div
@@ -187,7 +187,7 @@ const About = () => {
                   width: '100%', 
                   maxWidth: 400, 
                   margin: '0 auto', 
-                  p: 2, 
+                  p: { xs: 1.5, md: 2 }, 
                   borderRadius: '20px', 
                   background: 'rgba(0, 188, 212, 0.05)', 
                   boxShadow: '0 0 30px rgba(0, 188, 212, 0.2)', 
@@ -274,19 +274,20 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00bcd4', mb: 1, textShadow: '0 0 8px rgba(0, 188, 212, 0.4)' }}>
+                    <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#00bcd4', mb: 1, textShadow: '0 0 8px rgba(0, 188, 212, 0.4)', fontSize: { xs: '1.6rem', sm: '2rem', md: '2.125rem' } }}>
                       SANTHOSH R
                     </Typography>
                     <Typography variant="h6" sx={{ 
                       color: '#00bcd4', 
                       background: 'rgba(0, 188, 212, 0.15)', 
-                      padding: '8px 18px', 
+                      padding: { xs: '6px 14px', md: '8px 18px' }, 
                       borderRadius: '25px', 
                       display: 'inline-block',
                       fontWeight: 'bold',
                       letterSpacing: '1px', 
                       textTransform: 'uppercase', 
-                      border: '1px solid rgba(0, 188, 212, 0.3)'
+                      border: '1px solid rgba(0, 188, 212, 0.3)',
+                      fontSize: { xs: '0.85rem', md: '1.25rem' }
                     }}>
                       FULL STACK DEVELOPER
                     </Typography>
@@ -308,9 +309,9 @@ const About = () => {
                         color: '#00e5ff', 
                         borderColor: '#00e5ff',
                         borderRadius: '30px', 
-                        padding: '12px 35px', 
+                        padding: { xs: '10px 24px', md: '12px 35px' }, 
                         fontWeight: 'bold',
-                        fontSize: '1rem', 
+                        fontSize: { xs: '0.9rem', md: '1rem' }, 
                         '&:hover': {
                           backgroundColor: 'rgba(0, 229, 255, 0.15)', 
                           borderColor: '#00e5ff',
@@ -345,7 +346,7 @@ const About = () => {
                             color: '#00e5ff',
                             backgroundColor: 'rgba(0, 229, 255, 0.1)', 
                             borderRadius: '15px',
-                            padding: '14px', 
+                            padding: { xs: '10px', md: '14px' }, 
                             '&:hover': {
                               backgroundColor: 'rgba(0, 229, 255, 0.2)',
                               transform: 'translateY(-3px)',
@@ -374,7 +375,7 @@ const About = () => {
             >
               <Card
                 sx={{
-                  p: 4,
+                  p: { xs: 2.5, sm: 3, md: 4 },
                   borderRadius: '15px',
                   background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,188,212,0.08) 100%)',
                   backdropFilter: 'blur(12px)',
@@ -404,32 +405,77 @@ const About = () => {
                   }
                 }}
               >
-                <CardContent>
-                  <Typography variant="h6" paragraph sx={{ textAlign: 'justify', lineHeight: 1.8, mb: 3 }}>
-                    Hi, I'm <b style={{ color: '#00bcd4' }}>Santhosh</b>, a passionate Full Stack Developer
-                    with a strong foundation in web development and cloud technologies.
-                    As a fresher, I bring enthusiasm, adaptability, and a
-                    problem-solving mindset to every project I take on.
+                <CardContent sx={{ p: { xs: 1, sm: 2 } }}>
+                  <Typography
+                    variant="h6"
+                    paragraph
+                    sx={{
+                      textAlign: { xs: 'left', md: 'justify' },
+                      lineHeight: 1.8,
+                      mb: 3,
+                      fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.25rem' }
+                    }}
+                  >
+                    Hi, I'm <b style={{ color: '#00bcd4' }}>Santhosh</b>, a passionate{' '}
+                    <b style={{ color: '#00bcd4' }}>Full Stack Developer</b> and{' '}
+                    <b style={{ color: '#00bcd4' }}>Cloud Enthusiast</b> with a strong focus on{' '}
+                    <b style={{ color: '#00bcd4' }}>UI/UX design</b> and building attractive,
+                    user-friendly interfaces. I specialize in modern frameworks like{' '}
+                    <b style={{ color: '#00bcd4' }}>Next.js</b> and{' '}
+                    <b style={{ color: '#00bcd4' }}>Nest.js</b>, crafting scalable, responsive
+                    web applications across the full stack.
                   </Typography>
 
-                  <Typography variant="h6" paragraph sx={{ textAlign: 'justify', lineHeight: 1.8, mb: 3 }}>
-                    I enjoy building scalable applications, designing user-friendly
-                    interfaces, and leveraging AWS cloud services to deploy modern
-                    solutions. With skills in both frontend (React, HTML/CSS,
-                    JavaScript) and backend (Java, REST APIs, Oracle SQL, and MongoDB),
-                    I bridge the gap between design and functionality.
+                  <Typography
+                    variant="h6"
+                    paragraph
+                    sx={{
+                      textAlign: { xs: 'left', md: 'justify' },
+                      lineHeight: 1.8,
+                      mb: 3,
+                      fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.25rem' }
+                    }}
+                  >
+                    Currently working on multiple real-time client projects, contributing to
+                    end-to-end application development across frontend and backend. I build
+                    responsive, mobile-first interfaces with Tailwind CSS and Material UI,
+                    design and implement RESTful APIs with NestJS, and manage PostgreSQL
+                    databases using Supabase — including authentication, schemas, and CRUD
+                    operations. I also integrate secure payment gateways and email
+                    notification systems for authentication, order processing, and
+                    transactional emails.
                   </Typography>
 
-                  <Typography variant="h6" paragraph sx={{ textAlign: 'justify', lineHeight: 1.8 }}>
-                    What sets me apart is my ability to approach challenges
-                    analytically and solve problems creatively—whether it's optimizing
-                    code, enhancing user experiences, or designing cloud-based
-                    architectures.
+                  <Typography
+                    variant="h6"
+                    paragraph
+                    sx={{
+                      textAlign: { xs: 'left', md: 'justify' },
+                      lineHeight: 1.8,
+                      mb: 3,
+                      fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.25rem' }
+                    }}
+                  >
+                   My workflow includes unit and manual testing, debugging, code reviews,
+                    Git/GitHub version control, and Agile development practices.
                   </Typography>
 
                   {/* Animated skill tags */}
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mt: 4 }}>
-                    {['AWS','Next.js','Nest.js','Supabase','HTML5', 'CSS3', 'JavaScript', 'React', 'Material-UI','TypeScript','Tailwind CSS','Java', 'MongoDB', 'SQL', 'REST APIs', 'GitHub', 'Git',"UI/UX Designing "].map((skill, index) => (
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      color: '#00bcd4',
+                      fontWeight: 'bold',
+                      mb: 1.5,
+                      fontSize: { xs: '1rem', md: '1.15rem' },
+                      letterSpacing: '0.5px'
+                    }}
+                  >
+                    Technologies Used
+                  </Typography>
+
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 1, md: 1.5 }, mt: 1 }}>
+                    {['Next.js','React','Nest.JS','TypeScript','Tailwind CSS','Material UI','Supabase','PostgreSQL','Prisma','REST API','Git','GitHub','Email Integration','Payment Gateway','Unit Testing','Manual Testing','JWT','UI/UX Design'].map((skill, index) => (
                       <motion.span
                         key={skill}
                         initial={{ opacity: 0, scale: 0 }}
@@ -442,7 +488,7 @@ const About = () => {
                           color: '#00e5ff', 
                           padding: '7px 16px', 
                           borderRadius: '20px',
-                          fontSize: '14px',
+                          fontSize: '13px',
                           fontWeight: 'bold',
                           border: '1px solid rgba(0, 188, 212, 0.3)',
                           cursor: 'default',
@@ -470,8 +516,9 @@ const About = () => {
             variant="h3"
             align="center"
             sx={{ 
-              mb: 6,
+              mb: { xs: 4, md: 6 },
               fontWeight: 'bold',
+              fontSize: { xs: '2rem', md: '3rem' },
               background: 'linear-gradient(45deg, #00bcd4, #00e5ff)',
               backgroundClip: 'text',
               textFillColor: 'transparent',
@@ -528,7 +575,7 @@ const About = () => {
                   <Card
                     sx={{
                       textAlign: 'center',
-                      p: 4,
+                      p: { xs: 3, md: 4 },
                       height: '100%', // Ensures the card fills the height of its grid item
                       borderRadius: '15px',
                       background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,188,212,0.05) 100%)',
@@ -563,7 +610,7 @@ const About = () => {
                       >
                         {card.icon}
                       </motion.div>
-                      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, mt: 2, color: '#00bcd4' }}>
+                      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, mt: 2, color: '#00bcd4', fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
                         {card.title}
                       </Typography>
                       
@@ -572,6 +619,7 @@ const About = () => {
                         sx={{ 
                           color: 'text.secondary', 
                           lineHeight: 1.6,
+                          fontSize: { xs: '0.9rem', md: '1rem' },
                           minHeight: { xs: 'auto', md: '72px' } // Adjust minHeight as needed, e.g., for 3 lines of text
                         }}
                       >

@@ -72,7 +72,19 @@ const Education = () => {
         </motion.div>
 
         {/* Timeline */}
-        <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ mt: 4, px: { xs: 0, md: 2 } }}>
+        <Timeline 
+          position={isMobile ? 'right' : 'alternate'} 
+          sx={{ 
+            mt: 4, 
+            px: { xs: 0, md: 2 },
+            ...(isMobile && {
+              [`& .MuiTimelineItem-root:before`]: {
+                flex: 0,
+                padding: 0,
+              },
+            }),
+          }}
+        >
           {educationData.map((edu, index) => (
             <TimelineItem key={index}>
               <TimelineSeparator>
@@ -81,9 +93,10 @@ const Education = () => {
                 </TimelineDot>
                 {index < educationData.length - 1 && <TimelineConnector />}
               </TimelineSeparator>
-              <TimelineContent>
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <TimelineContent sx={{ px: { xs: 1.5, sm: 2 } }}>
+                <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', md: 'center' } }}>
                   <motion.div
+                    style={{ width: '100%', display: 'flex', justifyContent: isMobile ? 'flex-start' : 'center' }}
                     initial={{ opacity: 0, scale: 0.8, y: 40 }}
                     animate={visible ? { opacity: 1, scale: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: index * 0.2 }}
