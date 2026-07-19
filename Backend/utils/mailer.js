@@ -1,35 +1,13 @@
-import nodemailer from 'nodemailer';
+import { Resend } from "resend";
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: process.env.MAIL_USER,
-//     pass: process.env.MAIL_APP_PASSWORD,
-//   },
-// });
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_APP_PASSWORD,
-  },
-});
-transporter.verify((error, success) => {
-  if (error) {
-    console.error("SMTP Verify Error:", error);
-  } else {
-    console.log("SMTP Server is ready");
-  }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendOwnerNotification = async ({ name, email, subject, message }) => {
-  return transporter.sendMail({
-    from: `"Portfolio Contact Form" <${process.env.MAIL_USER}>`,
+  return resend.emails.send({
+    from: `Portfolio Contact Form <${process.env.RESEND_FROM_EMAIL}>`,
     to: process.env.OWNER_EMAIL,
     replyTo: email,
     subject: `New portfolio message: ${subject || 'No subject'}`,
@@ -118,8 +96,8 @@ export const sendOwnerNotification = async ({ name, email, subject, message }) =
 };
 
 export const sendUserConfirmation = async ({ name, email }) => {
-  return transporter.sendMail({
-    from: `"Santhosh R" <${process.env.MAIL_USER}>`,
+  return resend.emails.send({
+    from: `Santhosh R <${process.env.RESEND_FROM_EMAIL}>`,
     to: email,
     subject: 'Thanks for reaching out!',
     html: `
